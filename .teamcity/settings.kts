@@ -10,7 +10,7 @@ import java.io.File
 //version = "2023.05.4"
 
 project {
-    val jobNames = File("jobs.txt").readLines()
+    val jobNames = File("fast.txt").readLines()
     for (jobName in jobNames) {
         val jobId = jobName.replace(" ", "_")
         buildType {
