@@ -28,14 +28,15 @@ project {
         id("SubProject")
         name = "Sub Project for test"
         for (jobName in jobNames) {
-          val jobId = jobName.replace(" ", "_")
-          buildType {
-            id(jobId+test)
-            name = jobName
-            steps {
-                // Добавьте необходимые шаги для джобы
-                script {
-                    scriptContent = "echo \"Running job: $jobName\""
+            val jobId = jobName.replace(" ", "_")
+            buildType {
+                id(jobId + "test")
+                name = jobName
+                steps {
+                    // Добавьте необходимые шаги для джобы
+                    script {
+                        scriptContent = "echo \"Running job: $jobName\""
+                    }
                 }
             }
         }
