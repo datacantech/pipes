@@ -5,7 +5,7 @@ import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.ScriptBuildStep
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 import java.io.File
 
-version = "2023.05.4"
+//version = "2023.05.4"
 
 
 object Project : BuildType({
