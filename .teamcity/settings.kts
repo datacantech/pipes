@@ -7,19 +7,19 @@ import java.io.File
 
 //version = "2023.05.4"
 
-
-object Project : BuildType({
-    name = "Echo Jobs"
-
-    steps {
-        val file = File("fast.txt")
-        val lines = file.readLines()
-        for (i in lines.indices) {
-            script {
-                name = "${i}"
-                scriptContent = "echo ${lines[i]}"
+project {
+    val jobNames = File("jobs.txt").readLines()
+    for (jobName in jobNames) {
+        val jobId = jobName.replace(" ", "_")
+        buildType {
+            id(jobId)
+            name = jobName
+            steps {
+                // Добавьте необходимые шаги для джобы
+                script {
+                    scriptContent = "echo \"Running job: $jobName\""
+                }
             }
         }
     }
-})
-
+}
